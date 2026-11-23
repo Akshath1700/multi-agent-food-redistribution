@@ -27,7 +27,7 @@
 
     let active = false;
     function drawToggle() {
-      toggle.textContent = active ? "✔ I do backup collections (turn off)" : "Offer backup collections";
+      toggle.textContent = active ? "✓ I do backup collections (turn off)" : "Offer backup collections";
       toggle.className = active ? "on-green" : "primary";
       toggle.style.cssText = "width:auto;margin-top:0";
     }
@@ -53,7 +53,7 @@
         card.append(ui.el("img", { src: `/api/listings/${l.id}/photo`, alt: l.food_type }));
         const b = ui.el("div");
         const h = ui.el("h3");
-        h.append(ui.el("span", { class: "pill new" }, "BACKUP REQUEST"), `${l.food_type} — ${l.quantity} ${l.unit}`);
+        h.append(ui.el("span", { class: "pill new" }, "BACKUP REQUEST"), `${l.food_type} - ${l.quantity} ${l.unit}`);
         b.append(h, ui.el("div", { class: "meta" },
           `${l.restaurant.name}, ${l.restaurant.address} · ~${Math.round(r.eta_minutes)} min away · best before ${fmt(l.expires_at)}`));
         b.append(ui.el("div", { class: "meta" }, "Collect it and store it at your NGO. Please answer within 10 minutes."));
